@@ -1,11 +1,14 @@
+//Importaciones generales
 import mongoose from "mongoose";
+import "dotenv/config";
 
-const mongouri = process.env.DB_URI;
+//Conexión a la base de datos utilizando Mongoose
+const mongoUri = process.env.DB_URI;
 
 async function connectDB() {
     try {
         const connection = await mongoose.connect(
-            mongouri
+            mongoUri
         );
         console.log("Se ha establecido conexión con la Base de Datos");
     } catch (err) {

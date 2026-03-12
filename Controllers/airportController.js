@@ -19,7 +19,7 @@ export async function newAirport (req, res){
     }
 };
 
-//Controladores para actualizar un aeropuerto
+//Controladores para actualizar un aeropuerto 
 export async function editAirport (req, res){
     try {
         const {id} = req.params;

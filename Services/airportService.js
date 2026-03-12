@@ -69,12 +69,12 @@ export async function deleteAirport(airportId) {
     try {
 
         const airportDoc = await airport.findById(airportId);
-        if (!airport) {
+        if (!airportDoc) {
             throw new Error("Airport not found");
         }
 
-        await airport.deleteOne();
-        return airport;
+        await airportDoc.deleteOne();
+        return airportDoc;
     } catch (error) {
         console.error(error);
         throw new Error("Error deleting airport: " + error.message);
